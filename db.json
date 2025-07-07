@@ -1,0 +1,46 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "kategori": "Cuci Mobil",
+      "variasi": [
+        { "id": 101, "nama": "Cuci Mobil Biasa", "harga": 50000 },
+        { "id": 102, "nama": "Cuci Mobil + Wax", "harga": 80000 },
+        { "id": 103, "nama": "Cuci Mobil Detailing", "harga": 150000 }
+      ]
+    },
+    {
+      "id": 2,
+      "kategori": "Cuci Motor",
+      "variasi": [
+        { "id": 201, "nama": "Cuci Motor Biasa", "harga": 20000 },
+        { "id": 202, "nama": "Cuci Motor Detailing", "harga": 40000 }
+      ]
+    },
+    {
+      "id": 3,
+      "kategori": "Salon Mobil",
+      "variasi": [
+        { "id": 301, "nama": "Interior Cleaning", "harga": 120000 },
+        { "id": 302, "nama": "Fogging + AC", "harga": 100000 }
+      ]
+    }
+  ],
+  "transaksi": [
+    {
+      "id": "1001",
+      "pelanggan": "Andi",
+      "items": [
+        {
+          "menuId": 101,
+          "nama": "Cuci Mobil Biasa",
+          "harga": 50000,
+          "jumlah": 1
+        }
+      ],
+      "total": 50000,
+      "waktu": "2025-07-07T10:30:00.000Z",
+      "selesai": false
+    }
+  ]
+}
