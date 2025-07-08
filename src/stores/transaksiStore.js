@@ -32,7 +32,7 @@ export const useTransaksiStore = defineStore('transaksi', {
 
     async fetchTransaksi() {
       try {
-        const res = await axios.get('http://localhost:3000/transaksi')
+        const res = await axios.get('https://vagabond-catnip-cairnsmore.glitch.me/transaksi')
         this.transaksiList = res.data
       } catch (err) {
         console.error('❌ Gagal fetch transaksi:', err)
@@ -53,7 +53,7 @@ export const useTransaksiStore = defineStore('transaksi', {
       }
 
       try {
-        await axios.post('http://localhost:3000/transaksi', newData)
+        await axios.post('https://vagabond-catnip-cairnsmore.glitch.me/transaksi', newData)
         this.keranjang = []
         await this.fetchTransaksi()
       } catch (err) {
@@ -63,7 +63,7 @@ export const useTransaksiStore = defineStore('transaksi', {
 
     async tandaiSelesai(id) {
       try {
-        await axios.patch(`http://localhost:3000/transaksi/${id}`, {
+        await axios.patch(`https://vagabond-catnip-cairnsmore.glitch.me/transaksi/${id}`, {
           selesai: true
         })
         await this.fetchTransaksi()
