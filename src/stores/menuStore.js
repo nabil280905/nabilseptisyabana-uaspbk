@@ -26,7 +26,7 @@ export const useMenuStore = defineStore('menu', {
       this.loading = true
       this.error = null
       try {
-        const res = await axios.get('https://uas-server.vercel.app/menu')
+        const res = await axios.get('https://uas-server-production-acdc.up.railway.app/menu')
         this.daftarMenu = res.data
       } catch (err) {
         this.error = 'Gagal memuat data menu.'
