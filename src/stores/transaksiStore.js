@@ -32,7 +32,7 @@ export const useTransaksiStore = defineStore('transaksi', {
 
     async fetchTransaksi() {
       try {
-        const res = await axios.get('https://b8d4efda-ed90-4968-af5a-3b033b45fbb6-00-3vr5kpl0ig6w4.sisko.replit.dev/transaksi')
+        const res = await axios.get('https://uas-server.vercel.app/transaksi')
         this.transaksiList = res.data
       } catch (err) {
         console.error('❌ Gagal fetch transaksi:', err)
@@ -53,7 +53,7 @@ export const useTransaksiStore = defineStore('transaksi', {
       }
 
       try {
-        await axios.post('https://b8d4efda-ed90-4968-af5a-3b033b45fbb6-00-3vr5kpl0ig6w4.sisko.replit.dev/transaksi', newData)
+        await axios.post('https://uas-server.vercel.app/transaksi', newData)
         this.keranjang = []
         await this.fetchTransaksi()
       } catch (err) {
@@ -63,7 +63,7 @@ export const useTransaksiStore = defineStore('transaksi', {
 
     async tandaiSelesai(id) {
       try {
-        await axios.patch(`https://b8d4efda-ed90-4968-af5a-3b033b45fbb6-00-3vr5kpl0ig6w4.sisko.replit.dev/transaksi/${id}`, {
+        await axios.patch(`https://uas-server.vercel.app/transaksi/${id}`, {
           selesai: true
         })
         await this.fetchTransaksi()
