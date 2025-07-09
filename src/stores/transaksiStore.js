@@ -32,7 +32,7 @@ export const useTransaksiStore = defineStore('transaksi', {
 
     async fetchTransaksi() {
       try {
-        const res = await axios.get('https://uas-server.vercel.app/transaksi')
+        const res = await axios.get('https://uas-server-production-acdc.up.railway.app/transaksi')
         this.transaksiList = res.data
       } catch (err) {
         console.error('❌ Gagal fetch transaksi:', err)
@@ -53,7 +53,7 @@ export const useTransaksiStore = defineStore('transaksi', {
       }
 
       try {
-        await axios.post('https://uas-server.vercel.app/transaksi', newData)
+        await axios.post('https://uas-server-production-acdc.up.railway.app/transaksi', newData)
         this.keranjang = []
         await this.fetchTransaksi()
       } catch (err) {
@@ -63,7 +63,7 @@ export const useTransaksiStore = defineStore('transaksi', {
 
     async tandaiSelesai(id) {
       try {
-        await axios.patch(`https://uas-server.vercel.app/transaksi/${id}`, {
+        await axios.patch(`https://uas-server-production-acdc.up.railway.app/transaksi/${id}`, {
           selesai: true
         })
         await this.fetchTransaksi()
